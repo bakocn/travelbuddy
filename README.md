@@ -2,7 +2,6 @@
 
 **TravelBuddy** is a web application that allows users to quickly search for the cheapest round-trip flights between two airports. Users can register, log in, enter origin and destination airports with travel dates, and receive flight options with prices and booking links.
 
----
 
 ## Features
 
@@ -12,7 +11,6 @@
 - Modern React frontend with responsive UI
 - ASP.NET Core backend integrating with Google Flights API via RapidAPI
 
----
 
 ## Technologies Used
 
@@ -22,17 +20,42 @@
 - **Authentication:** JWT stored in localStorage
 - **Tools:** Docker (optional), Git & GitHub
 
----
 
 
+### Database Setup
+
+This project uses PostgreSQL as the database.
+
+Step 1: Install PostgreSQL
+Download and install PostgreSQL from https://www.postgresql.org/download/
+
+During installation, create a user and password (or remember the default)
+
+Step 2: Create a database
+In pgAdmin, create a new database named travelbuddy.
+
+Step 3: Configure connection string
+Open appsettings.json and update the connection string with your database credentials:
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Database=travelbuddydb;Username=yourusername;Password=yourpassword"
+  }
+}
+Step 4: Apply Entity Framework migrations
+Make sure you have dotnet-ef installed globally:
+
+dotnet tool install --global dotnet-ef
+Then run migrations to create the tables in your database:
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
 
 ### Setup and Run Backend
 
 1. Navigate to the backend project folder.
 
 2. Create a `.env` or `appsettings.json` file with your RapidAPI credentials:
-3. Run the backend
-    dotnet run
 ```env
 RapidAPI__FlightsHost=your-rapidapi-host
 RapidAPI__FlightsKey=your-rapidapi-key
