@@ -35,10 +35,10 @@ During installation, create a user and password (or remember the default).
 You can create the database using pgAdmin or the command line:
 
 ```bash
-createdb travelbuddydb
+createdb travelbuddy
 ```
 
-Or create a new database named `travelbuddydb` via pgAdmin.
+Or create a new database named `travelbuddy` via pgAdmin.
 
 ### Step 3: Configure connection string
 
@@ -123,6 +123,4 @@ npm start
 5. Click the booking link to be redirected to Skyscanner for booking.
 
 ---
-
-Feel free to contribute or report issues!
 
