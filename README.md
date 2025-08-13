@@ -8,13 +8,13 @@
 - Search for round-trip flights by airport codes and dates
 - Display airline name, price, and booking link (via Skyscanner)
 - Modern React frontend with responsive UI
-- ASP.NET Core backend integrating with Kiwi.com API via RapidAPI
+- ASP.NET Core backend integrating with Google Flights API via RapidAPI
 
 ## Technologies Used
 
 - **Backend:** ASP.NET Core (C#)
 - **Frontend:** React with TypeScript
-- **Flight API:** Kiwi.com API via RapidAPI
+- **Flight API:** Google Flights API via RapidAPI
 - **Authentication:** JWT stored in localStorage
 - **Tools:** Docker (optional), Git & GitHub
 
