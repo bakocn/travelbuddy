@@ -64,7 +64,7 @@ namespace TravelBuddy.Api.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(token);
 
-            // Return token + minimal user info
+            
             return Ok(new
             {
                 token = tokenString,
