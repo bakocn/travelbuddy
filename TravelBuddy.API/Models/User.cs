@@ -9,6 +9,6 @@ namespace TravelBuddy.Api.Models
         public string Email { get; set; } = null!;
 
         [JsonIgnore]
-        public string PasswordHash { get; set; } = null!; // neće se serijalizovati u JSON odgovoru
+        public string PasswordHash { get; set; } = null!;
     }
 }
