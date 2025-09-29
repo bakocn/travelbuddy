@@ -16,7 +16,7 @@ export default function Register() {
       await api.post("/auth/register", { name, email, password });
       setMessage("Thank you, you are registered! You can login now.");
 
-      // Sačekaj 2 sekunde, pa preusmeri na login
+
       setTimeout(() => {
         navigate("/login");
       }, 2000);
