@@ -1,4 +1,4 @@
-import api from "../api/api"; // default export postoji sada
+import api from "../api/api"; 
 
 export interface User {
   id?: number;
