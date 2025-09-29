@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await api.post<{ token: string; user: { id: number; name: string; email: string } }>("/auth/login", { email, password });
-      // dekonstruiši
+  
       const { token, user } = res;
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
