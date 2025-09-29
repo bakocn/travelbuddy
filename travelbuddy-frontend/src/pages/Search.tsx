@@ -40,9 +40,9 @@ export default function Search() {
     }
   };
 
-  // Helper: napravi link ka Skyscanner za dati origin, dest i datum (outboundDate)
+
   const getBookingLink = (origin: string, destination: string, outboundDate: string) => {
-    // format datuma YYYY-MM-DD u YYYYMMDD za Skyscanner link
+
     const dateFormatted = outboundDate.replace(/-/g, "");
     return `https://www.skyscanner.net/transport/flights/${origin.toLowerCase()}/${destination.toLowerCase()}/${dateFormatted}/`;
   };
