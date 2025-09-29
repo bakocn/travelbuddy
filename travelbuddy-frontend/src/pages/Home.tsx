@@ -9,10 +9,10 @@ export default function Home() {
         backgroundImage: "url('plane2.jpg')"
       }}
     >
-      {/* Overlay da malo zatamni sliku */}
+     
      <div className="absolute inset-0 bg-black/40" />
 
-      {/* Sadržaj */}
+     
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white p-6">
         <h1 className="text-5xl font-bold mb-4">Welcome to TravelBuddy AI</h1>
         <p className="text-lg max-w-2xl">
