@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TravelBuddy.Api.Data;
 using TravelBuddy.Api.Models;
 using TravelBuddy.Api.Dtos;
-using System.Security.Claims; // <- dodaj ovo
+using System.Security.Claims; 
 
 namespace TravelBuddy.Api.Controllers
 {
@@ -18,14 +18,14 @@ namespace TravelBuddy.Api.Controllers
             _context = context;
         }
 
-        // GET: api/trips
+     
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Trip>>> GetTrips()
         {
             return await _context.Trips.Include(t => t.User).ToListAsync();
         }
 
-        // GET: api/trips/5
+      
         [HttpGet("{id}")]
         public async Task<ActionResult<Trip>> GetTrip(int id)
         {
@@ -35,11 +35,11 @@ namespace TravelBuddy.Api.Controllers
             return trip;
         }
 
-        // POST: api/trips
+     
          [HttpPost]
     public async Task<ActionResult<Trip>> PostTrip(CreateTripDto dto)
     {
-        // uzimamo userId iz JWT tokena (claims)
+      
         var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         if (!int.TryParse(userIdClaim, out var currentUserId))
         {
@@ -52,7 +52,7 @@ namespace TravelBuddy.Api.Controllers
             StartDate = dto.StartDate,
             EndDate = dto.EndDate,
             Price = dto.Price,
-            UserId = currentUserId // koristimo ID iz tokena
+            UserId = currentUserId
         };
 
         _context.Trips.Add(trip);
@@ -61,7 +61,7 @@ namespace TravelBuddy.Api.Controllers
         return CreatedAtAction(nameof(GetTrip), new { id = trip.Id }, trip);
     }
 
-        // PUT: api/trips/5
+   
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTrip(int id, CreateTripDto dto)
         {
@@ -78,7 +78,7 @@ namespace TravelBuddy.Api.Controllers
             return NoContent();
         }
 
-        // DELETE: api/trips/5
+    
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTrip(int id)
         {
